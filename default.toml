@@ -1,0 +1,12 @@
+######################
+InputExcelPath       = "./test"
+OutputProtoPath       = "./test"
+
+OutputDataCSharpPath = "./test/csharp/conf_data"
+OutputDataGoPath     = "./test/go/conf_data"
+OutputCodeCSharpPath = "./test/csharp/gen"
+OutputCodeGoPath     = "./test/go/gen"
+
+ProtoPackage = "Conf"
+CSharpNamespace = "conf"
+GoPackage       = "conf"

@@ -1,13 +1,13 @@
 ######################
-InputExcelPath       = "./test"
-OutputProtoPath       = "./test"
+InputExcelPath      = "./test"
+OutputProtoPath     = "./test"
 
 OutputDataCSharpPath = "./test/csharp/conf_data"
 OutputDataGoPath     = "./test/go/conf_data"
 OutputCodeCSharpPath = "./test/csharp/gen/conf"
 OutputCodeGoPath     = "./test/go/gen/conf"
 
-ProtoPackage = "Conf"
-CSharpNamespace = "conf"
-GoPackage       = "conf"
-GoPackageFullPath       = "github.com/zero-yy/export-config/test/go/gen/conf"
+ProtoPackage        = "Conf"
+CSharpNamespace     = "conf"
+GoPackage           = "conf"
+GoPackageFullPath   = "github.com/zero-yy/export-config/test/go/gen/conf"

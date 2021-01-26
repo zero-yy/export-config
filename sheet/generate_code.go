@@ -2,7 +2,7 @@ package sheet
 
 import (
 	"bytes"
-	"github.com/zero-yy/export-config/internal/config"
+	"github.com/zero-yy/export-config/config"
 	"io/ioutil"
 	"os"
 	"path"
@@ -33,7 +33,22 @@ func generateFrameForX(frame map[string]string, outputPath string) {
 			panic(err)
 		}
 
-		err = ioutil.WriteFile(path.Join(outputPath, k), []byte(v), os.ModePerm)
+		type tempStruct struct {
+			GoPackageFullPath string
+		}
+		var buff bytes.Buffer
+		temp, err := template.New("frame").Parse(v)
+
+		if err != nil {
+			panic(err)
+		}
+
+		err = temp.Execute(&buff, &tempStruct{GoPackageFullPath: config.C.GoPackageFullPath})
+		if err != nil {
+			panic(err)
+		}
+
+		err = ioutil.WriteFile(path.Join(outputPath, k), buff.Bytes(), os.ModePerm)
 		if err != nil {
 			panic(err)
 		}

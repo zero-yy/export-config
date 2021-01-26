@@ -7,7 +7,7 @@ run: fmt
 	go run main.go
 
 test: run
-	go run test/go/gen/cmd/gendata/main.go --input=./test -outg=./test/go/conf_data
+	go run test/go/gen/conf/cmd/gendata/main.go --config=./default.toml
 
 bin: fmt
 	go build -o export-config ./cmd/main.go

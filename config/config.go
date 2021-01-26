@@ -14,9 +14,10 @@ type Config struct {
 	OutputCodeCSharpPath string
 	OutputCodeGoPath     string
 
-	ProtoPackage    string
-	CSharpNamespace string
-	GoPackage       string
+	ProtoPackage      string
+	CSharpNamespace   string
+	GoPackage         string
+	GoPackageFullPath string
 }
 
 var C Config

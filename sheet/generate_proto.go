@@ -3,7 +3,7 @@ package sheet
 import (
 	"bytes"
 	"fmt"
-	"github.com/zero-yy/export-config/internal/config"
+	"github.com/zero-yy/export-config/config"
 	"io/ioutil"
 	"os"
 	"os/exec"

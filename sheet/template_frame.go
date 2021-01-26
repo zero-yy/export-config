@@ -9,21 +9,24 @@ package main
 
 import (
 	"flag"
-	conf "github.com/zero-yy/export-config/test/go/gen"
+	"fmt"
+	"github.com/zero-yy/export-config/config"
+	"{{.GoPackageFullPath}}"
 )
 
 var (
-	inputExcelPath       = flag.String("input", "", "path of input excel")
-	outputDataGoPath     = flag.String("outg", "", "path of output data go")
-	outputDataCsharpPath = flag.String("outcs", "", "path of output data csharp")
+	configFileName = flag.String("config", "./default.toml", "config file")
 )
 
 func main() {
 	flag.Parse()
+	fmt.Printf("start run gendata --config=%s\n", *configFileName)
 
-	conf.MustSave(*inputExcelPath, *outputDataGoPath)
+	config.MustInit(*configFileName)
+
+	conf.MustSave(config.C.InputExcelPath, config.C.OutputDataGoPath)
+	conf.MustSave(config.C.InputExcelPath, config.C.OutputDataCSharpPath)
 }
-	
 `,
 
 		//=================

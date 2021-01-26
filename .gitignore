@@ -15,9 +15,5 @@
 # vendor/
 
 .idea/
-test/go/conf_data/test.bytes
-test/go/conf_data/test.json
-test/go/conf_data/test2.bytes
-test/go/conf_data/test2.json
-test/go/conf_data/test3.bytes
-test/go/conf_data/test3.json
+test/go/
+test/csharp/

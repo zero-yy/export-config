@@ -1,7 +1,7 @@
 package sheet
 
 import (
-	"github.com/zero-yy/export-config/internal/config"
+	"github.com/zero-yy/export-config/config"
 )
 
 func GenCode() {

@@ -3,7 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
-	config "github.com/zero-yy/export-config/internal/config"
+	config "github.com/zero-yy/export-config/config"
 	"github.com/zero-yy/export-config/sheet"
 )
 

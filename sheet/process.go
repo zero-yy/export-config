@@ -13,9 +13,5 @@ func GenCode() {
 	// pb code
 	callProtoC()
 
-	// loader
-	generateLoader(sheets)
-
-	// saver func
-	generateSaver(sheets)
+	generateCode(sheets)
 }

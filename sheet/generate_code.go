@@ -9,13 +9,36 @@ import (
 	"text/template"
 )
 
-//func toTempSheets(sheets []*Sheet) []TempSheet {
-//	ret := make([]TempSheet, 0, len(sheets))
-//	for _, s := range sheets {
-//		ret = append(ret, TempSheet{Name: s.Name})
-//	}
-//	return ret
-//}
+func generateCode(sheets []*Sheet) {
+	generateFrame(sheets)
+
+	// loader
+	generateLoader(sheets)
+
+	// saver func
+	generateSaver(sheets)
+}
+
+func generateFrame(sheets []*Sheet) {
+	// go
+	generateFrameForX(goGenFrame, config.C.OutputCodeGoPath)
+	generateFrameForX(csGenFrame, config.C.OutputCodeCSharpPath)
+}
+
+func generateFrameForX(frame map[string]string, outputPath string) {
+	for k, v := range frame {
+		relativePath, _ := path.Split(k)
+		err := os.MkdirAll(path.Join(outputPath, relativePath), os.ModePerm)
+		if err != nil {
+			panic(err)
+		}
+
+		err = ioutil.WriteFile(path.Join(outputPath, k), []byte(v), os.ModePerm)
+		if err != nil {
+			panic(err)
+		}
+	}
+}
 
 func generateLoader(sheets []*Sheet) {
 	generateLoadForX(sheets,

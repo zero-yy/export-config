@@ -1,6 +1,7 @@
 package sheet
 
 import (
+	"reflect"
 	"strconv"
 	"strings"
 )
@@ -24,6 +25,7 @@ var (
 		"double":  "double",
 		"float64": "double",
 
+		// not support now!
 		"list<int32>": "repeated int32",
 		"list<int>":   "repeated int32",
 		"list<int64>": "repeated int64",
@@ -40,6 +42,27 @@ var (
 		"list<float32>": "repeated float",
 		"list<double>":  "repeated double",
 		"list<float64>": "repeated double",
+	}
+
+	typeReflect = map[string]func() reflect.Type{
+		"int32": func() reflect.Type { return reflect.TypeOf(int32(0)) },
+		"int":   func() reflect.Type { return reflect.TypeOf(int32(0)) },
+		"int64": func() reflect.Type { return reflect.TypeOf(int64(0)) },
+		"long":  func() reflect.Type { return reflect.TypeOf(int64(0)) },
+
+		"uint32": func() reflect.Type { return reflect.TypeOf(uint32(0)) },
+		"uint":   func() reflect.Type { return reflect.TypeOf(uint32(0)) },
+		"uint64": func() reflect.Type { return reflect.TypeOf(uint64(0)) },
+		"ulong":  func() reflect.Type { return reflect.TypeOf(uint64(0)) },
+
+		"string": func() reflect.Type { return reflect.TypeOf("") },
+
+		"float":   func() reflect.Type { return reflect.TypeOf(float32(0)) },
+		"float32": func() reflect.Type { return reflect.TypeOf(float32(0)) },
+		"double":  func() reflect.Type { return reflect.TypeOf(float64(0)) },
+		"float64": func() reflect.Type { return reflect.TypeOf(float64(0)) },
+
+		// not support others!
 	}
 )
 

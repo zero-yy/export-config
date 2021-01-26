@@ -14,12 +14,15 @@ message test
 		string test_default = 3; 
 		int32 test_int32 = 4; 
 		uint32 test_uint32 = 5; 
-		int64 test_int64 = 6; 
-		uint64 test_uint64 = 7; 
-		float test_float32 = 8; 
-		double test_float64 = 9; 
-		double test_double = 10; 
-		repeated int32 test_arys = 11; // decorate:ary
+		uint32 test_uint = 6; 
+		int64 test_int64 = 7; 
+		uint64 test_uint64 = 8; 
+		float test_float = 9; 
+		float test_float32 = 10; 
+		double test_float64 = 11; 
+		double test_double = 12; 
+		repeated int32 test_arys = 13; // decorate:ary
+		repeated double test_ary2s = 16; // decorate:ary
 	}
 
 	map<int32, Record> records = 1;

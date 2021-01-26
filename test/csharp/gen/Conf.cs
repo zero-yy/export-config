@@ -24,32 +24,33 @@ namespace conf {
     static ConfReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Cgpjb25mLnByb3RvEgRDb25mIuoCCgR0ZXN0EigKB3JlY29yZHMYASADKAsy",
-            "Fy5Db25mLnRlc3QuUmVjb3Jkc0VudHJ5Eg0KBWNyYzMyGAIgASgNGuUBCgZS",
+            "Cgpjb25mLnByb3RvEgRDb25mIqUDCgR0ZXN0EigKB3JlY29yZHMYASADKAsy",
+            "Fy5Db25mLnRlc3QuUmVjb3Jkc0VudHJ5Eg0KBWNyYzMyGAIgASgNGqACCgZS",
             "ZWNvcmQSCgoCaWQYASABKAUSEwoLdGVzdF9zdHJpbmcYAiABKAkSFAoMdGVz",
             "dF9kZWZhdWx0GAMgASgJEhIKCnRlc3RfaW50MzIYBCABKAUSEwoLdGVzdF91",
-            "aW50MzIYBSABKA0SEgoKdGVzdF9pbnQ2NBgGIAEoAxITCgt0ZXN0X3VpbnQ2",
-            "NBgHIAEoBBIUCgx0ZXN0X2Zsb2F0MzIYCCABKAISFAoMdGVzdF9mbG9hdDY0",
-            "GAkgASgBEhMKC3Rlc3RfZG91YmxlGAogASgBEhEKCXRlc3RfYXJ5cxgLIAMo",
-            "BRpBCgxSZWNvcmRzRW50cnkSCwoDa2V5GAEgASgFEiAKBXZhbHVlGAIgASgL",
-            "MhEuQ29uZi50ZXN0LlJlY29yZDoCOAEirgEKBXRlc3QyEikKB3JlY29yZHMY",
-            "ASADKAsyGC5Db25mLnRlc3QyLlJlY29yZHNFbnRyeRINCgVjcmMzMhgCIAEo",
-            "DRonCgZSZWNvcmQSCgoCaWQYASABKAkSEQoJdGVzdF9hcnlzGAIgAygFGkIK",
-            "DFJlY29yZHNFbnRyeRILCgNrZXkYASABKAkSIQoFdmFsdWUYAiABKAsyEi5D",
-            "b25mLnRlc3QyLlJlY29yZDoCOAEi7QIKBXRlc3QzEikKB3JlY29yZHMYASAD",
-            "KAsyGC5Db25mLnRlc3QzLlJlY29yZHNFbnRyeRINCgVjcmMzMhgCIAEoDRrl",
-            "AQoGUmVjb3JkEgoKAmlkGAEgASgFEhMKC3Rlc3Rfc3RyaW5nGAIgASgJEhQK",
-            "DHRlc3RfZGVmYXVsdBgDIAEoCRISCgp0ZXN0X2ludDMyGAQgASgFEhMKC3Rl",
-            "c3RfdWludDMyGAUgASgNEhIKCnRlc3RfaW50NjQYBiABKAMSEwoLdGVzdF91",
-            "aW50NjQYByABKAQSFAoMdGVzdF9mbG9hdDMyGAggASgCEhQKDHRlc3RfZmxv",
-            "YXQ2NBgJIAEoARITCgt0ZXN0X2RvdWJsZRgKIAEoARIRCgl0ZXN0X2FyeXMY",
-            "CyADKAUaQgoMUmVjb3Jkc0VudHJ5EgsKA2tleRgBIAEoBRIhCgV2YWx1ZRgC",
-            "IAEoCzISLkNvbmYudGVzdDMuUmVjb3JkOgI4AUINWgRjb25mqgIEY29uZmIG",
-            "cHJvdG8z"));
+            "aW50MzIYBSABKA0SEQoJdGVzdF91aW50GAYgASgNEhIKCnRlc3RfaW50NjQY",
+            "ByABKAMSEwoLdGVzdF91aW50NjQYCCABKAQSEgoKdGVzdF9mbG9hdBgJIAEo",
+            "AhIUCgx0ZXN0X2Zsb2F0MzIYCiABKAISFAoMdGVzdF9mbG9hdDY0GAsgASgB",
+            "EhMKC3Rlc3RfZG91YmxlGAwgASgBEhEKCXRlc3RfYXJ5cxgNIAMoBRISCgp0",
+            "ZXN0X2FyeTJzGBAgAygBGkEKDFJlY29yZHNFbnRyeRILCgNrZXkYASABKAUS",
+            "IAoFdmFsdWUYAiABKAsyES5Db25mLnRlc3QuUmVjb3JkOgI4ASKuAQoFdGVz",
+            "dDISKQoHcmVjb3JkcxgBIAMoCzIYLkNvbmYudGVzdDIuUmVjb3Jkc0VudHJ5",
+            "Eg0KBWNyYzMyGAIgASgNGicKBlJlY29yZBIKCgJpZBgBIAEoCRIRCgl0ZXN0",
+            "X2FyeXMYAiADKAUaQgoMUmVjb3Jkc0VudHJ5EgsKA2tleRgBIAEoCRIhCgV2",
+            "YWx1ZRgCIAEoCzISLkNvbmYudGVzdDIuUmVjb3JkOgI4ASLtAgoFdGVzdDMS",
+            "KQoHcmVjb3JkcxgBIAMoCzIYLkNvbmYudGVzdDMuUmVjb3Jkc0VudHJ5Eg0K",
+            "BWNyYzMyGAIgASgNGuUBCgZSZWNvcmQSCgoCaWQYASABKAUSEwoLdGVzdF9z",
+            "dHJpbmcYAiABKAkSFAoMdGVzdF9kZWZhdWx0GAMgASgJEhIKCnRlc3RfaW50",
+            "MzIYBCABKAUSEwoLdGVzdF91aW50MzIYBSABKA0SEgoKdGVzdF9pbnQ2NBgG",
+            "IAEoAxITCgt0ZXN0X3VpbnQ2NBgHIAEoBBIUCgx0ZXN0X2Zsb2F0MzIYCCAB",
+            "KAISFAoMdGVzdF9mbG9hdDY0GAkgASgBEhMKC3Rlc3RfZG91YmxlGAogASgB",
+            "EhEKCXRlc3RfYXJ5cxgLIAMoBRpCCgxSZWNvcmRzRW50cnkSCwoDa2V5GAEg",
+            "ASgFEiEKBXZhbHVlGAIgASgLMhIuQ29uZi50ZXN0My5SZWNvcmQ6AjgBQg1a",
+            "BGNvbmaqAgRjb25mYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::conf.test), global::conf.test.Parser, new[]{ "Records", "Crc32" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::conf.test.Types.Record), global::conf.test.Types.Record.Parser, new[]{ "Id", "TestString", "TestDefault", "TestInt32", "TestUint32", "TestInt64", "TestUint64", "TestFloat32", "TestFloat64", "TestDouble", "TestArys" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::conf.test), global::conf.test.Parser, new[]{ "Records", "Crc32" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::conf.test.Types.Record), global::conf.test.Types.Record.Parser, new[]{ "Id", "TestString", "TestDefault", "TestInt32", "TestUint32", "TestUint", "TestInt64", "TestUint64", "TestFloat", "TestFloat32", "TestFloat64", "TestDouble", "TestArys", "TestAry2S" }, null, null, null, null),
             null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::conf.test2), global::conf.test2.Parser, new[]{ "Records", "Crc32" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::conf.test2.Types.Record), global::conf.test2.Types.Record.Parser, new[]{ "Id", "TestArys" }, null, null, null, null),
             null, }),
@@ -242,12 +243,15 @@ namespace conf {
           testDefault_ = other.testDefault_;
           testInt32_ = other.testInt32_;
           testUint32_ = other.testUint32_;
+          testUint_ = other.testUint_;
           testInt64_ = other.testInt64_;
           testUint64_ = other.testUint64_;
+          testFloat_ = other.testFloat_;
           testFloat32_ = other.testFloat32_;
           testFloat64_ = other.testFloat64_;
           testDouble_ = other.testDouble_;
           testArys_ = other.testArys_.Clone();
+          testAry2S_ = other.testAry2S_.Clone();
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
         }
 
@@ -314,8 +318,19 @@ namespace conf {
           }
         }
 
+        /// <summary>Field number for the "test_uint" field.</summary>
+        public const int TestUintFieldNumber = 6;
+        private uint testUint_;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public uint TestUint {
+          get { return testUint_; }
+          set {
+            testUint_ = value;
+          }
+        }
+
         /// <summary>Field number for the "test_int64" field.</summary>
-        public const int TestInt64FieldNumber = 6;
+        public const int TestInt64FieldNumber = 7;
         private long testInt64_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public long TestInt64 {
@@ -326,7 +341,7 @@ namespace conf {
         }
 
         /// <summary>Field number for the "test_uint64" field.</summary>
-        public const int TestUint64FieldNumber = 7;
+        public const int TestUint64FieldNumber = 8;
         private ulong testUint64_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public ulong TestUint64 {
@@ -336,8 +351,19 @@ namespace conf {
           }
         }
 
+        /// <summary>Field number for the "test_float" field.</summary>
+        public const int TestFloatFieldNumber = 9;
+        private float testFloat_;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public float TestFloat {
+          get { return testFloat_; }
+          set {
+            testFloat_ = value;
+          }
+        }
+
         /// <summary>Field number for the "test_float32" field.</summary>
-        public const int TestFloat32FieldNumber = 8;
+        public const int TestFloat32FieldNumber = 10;
         private float testFloat32_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public float TestFloat32 {
@@ -348,7 +374,7 @@ namespace conf {
         }
 
         /// <summary>Field number for the "test_float64" field.</summary>
-        public const int TestFloat64FieldNumber = 9;
+        public const int TestFloat64FieldNumber = 11;
         private double testFloat64_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public double TestFloat64 {
@@ -359,7 +385,7 @@ namespace conf {
         }
 
         /// <summary>Field number for the "test_double" field.</summary>
-        public const int TestDoubleFieldNumber = 10;
+        public const int TestDoubleFieldNumber = 12;
         private double testDouble_;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public double TestDouble {
@@ -370,9 +396,9 @@ namespace conf {
         }
 
         /// <summary>Field number for the "test_arys" field.</summary>
-        public const int TestArysFieldNumber = 11;
+        public const int TestArysFieldNumber = 13;
         private static readonly pb::FieldCodec<int> _repeated_testArys_codec
-            = pb::FieldCodec.ForInt32(90);
+            = pb::FieldCodec.ForInt32(106);
         private readonly pbc::RepeatedField<int> testArys_ = new pbc::RepeatedField<int>();
         /// <summary>
         /// decorate:ary
@@ -380,6 +406,19 @@ namespace conf {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         public pbc::RepeatedField<int> TestArys {
           get { return testArys_; }
+        }
+
+        /// <summary>Field number for the "test_ary2s" field.</summary>
+        public const int TestAry2SFieldNumber = 16;
+        private static readonly pb::FieldCodec<double> _repeated_testAry2S_codec
+            = pb::FieldCodec.ForDouble(130);
+        private readonly pbc::RepeatedField<double> testAry2S_ = new pbc::RepeatedField<double>();
+        /// <summary>
+        /// decorate:ary
+        /// </summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public pbc::RepeatedField<double> TestAry2S {
+          get { return testAry2S_; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -400,12 +439,15 @@ namespace conf {
           if (TestDefault != other.TestDefault) return false;
           if (TestInt32 != other.TestInt32) return false;
           if (TestUint32 != other.TestUint32) return false;
+          if (TestUint != other.TestUint) return false;
           if (TestInt64 != other.TestInt64) return false;
           if (TestUint64 != other.TestUint64) return false;
+          if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(TestFloat, other.TestFloat)) return false;
           if (!pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.Equals(TestFloat32, other.TestFloat32)) return false;
           if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(TestFloat64, other.TestFloat64)) return false;
           if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(TestDouble, other.TestDouble)) return false;
           if(!testArys_.Equals(other.testArys_)) return false;
+          if(!testAry2S_.Equals(other.testAry2S_)) return false;
           return Equals(_unknownFields, other._unknownFields);
         }
 
@@ -417,12 +459,15 @@ namespace conf {
           if (TestDefault.Length != 0) hash ^= TestDefault.GetHashCode();
           if (TestInt32 != 0) hash ^= TestInt32.GetHashCode();
           if (TestUint32 != 0) hash ^= TestUint32.GetHashCode();
+          if (TestUint != 0) hash ^= TestUint.GetHashCode();
           if (TestInt64 != 0L) hash ^= TestInt64.GetHashCode();
           if (TestUint64 != 0UL) hash ^= TestUint64.GetHashCode();
+          if (TestFloat != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(TestFloat);
           if (TestFloat32 != 0F) hash ^= pbc::ProtobufEqualityComparers.BitwiseSingleEqualityComparer.GetHashCode(TestFloat32);
           if (TestFloat64 != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(TestFloat64);
           if (TestDouble != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(TestDouble);
           hash ^= testArys_.GetHashCode();
+          hash ^= testAry2S_.GetHashCode();
           if (_unknownFields != null) {
             hash ^= _unknownFields.GetHashCode();
           }
@@ -456,27 +501,36 @@ namespace conf {
             output.WriteRawTag(40);
             output.WriteUInt32(TestUint32);
           }
-          if (TestInt64 != 0L) {
+          if (TestUint != 0) {
             output.WriteRawTag(48);
+            output.WriteUInt32(TestUint);
+          }
+          if (TestInt64 != 0L) {
+            output.WriteRawTag(56);
             output.WriteInt64(TestInt64);
           }
           if (TestUint64 != 0UL) {
-            output.WriteRawTag(56);
+            output.WriteRawTag(64);
             output.WriteUInt64(TestUint64);
           }
+          if (TestFloat != 0F) {
+            output.WriteRawTag(77);
+            output.WriteFloat(TestFloat);
+          }
           if (TestFloat32 != 0F) {
-            output.WriteRawTag(69);
+            output.WriteRawTag(85);
             output.WriteFloat(TestFloat32);
           }
           if (TestFloat64 != 0D) {
-            output.WriteRawTag(73);
+            output.WriteRawTag(89);
             output.WriteDouble(TestFloat64);
           }
           if (TestDouble != 0D) {
-            output.WriteRawTag(81);
+            output.WriteRawTag(97);
             output.WriteDouble(TestDouble);
           }
           testArys_.WriteTo(output, _repeated_testArys_codec);
+          testAry2S_.WriteTo(output, _repeated_testAry2S_codec);
           if (_unknownFields != null) {
             _unknownFields.WriteTo(output);
           }
@@ -500,11 +554,17 @@ namespace conf {
           if (TestUint32 != 0) {
             size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TestUint32);
           }
+          if (TestUint != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeUInt32Size(TestUint);
+          }
           if (TestInt64 != 0L) {
             size += 1 + pb::CodedOutputStream.ComputeInt64Size(TestInt64);
           }
           if (TestUint64 != 0UL) {
             size += 1 + pb::CodedOutputStream.ComputeUInt64Size(TestUint64);
+          }
+          if (TestFloat != 0F) {
+            size += 1 + 4;
           }
           if (TestFloat32 != 0F) {
             size += 1 + 4;
@@ -516,6 +576,7 @@ namespace conf {
             size += 1 + 8;
           }
           size += testArys_.CalculateSize(_repeated_testArys_codec);
+          size += testAry2S_.CalculateSize(_repeated_testAry2S_codec);
           if (_unknownFields != null) {
             size += _unknownFields.CalculateSize();
           }
@@ -542,11 +603,17 @@ namespace conf {
           if (other.TestUint32 != 0) {
             TestUint32 = other.TestUint32;
           }
+          if (other.TestUint != 0) {
+            TestUint = other.TestUint;
+          }
           if (other.TestInt64 != 0L) {
             TestInt64 = other.TestInt64;
           }
           if (other.TestUint64 != 0UL) {
             TestUint64 = other.TestUint64;
+          }
+          if (other.TestFloat != 0F) {
+            TestFloat = other.TestFloat;
           }
           if (other.TestFloat32 != 0F) {
             TestFloat32 = other.TestFloat32;
@@ -558,6 +625,7 @@ namespace conf {
             TestDouble = other.TestDouble;
           }
           testArys_.Add(other.testArys_);
+          testAry2S_.Add(other.testAry2S_);
           _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
         }
 
@@ -590,28 +658,41 @@ namespace conf {
                 break;
               }
               case 48: {
-                TestInt64 = input.ReadInt64();
+                TestUint = input.ReadUInt32();
                 break;
               }
               case 56: {
+                TestInt64 = input.ReadInt64();
+                break;
+              }
+              case 64: {
                 TestUint64 = input.ReadUInt64();
                 break;
               }
-              case 69: {
+              case 77: {
+                TestFloat = input.ReadFloat();
+                break;
+              }
+              case 85: {
                 TestFloat32 = input.ReadFloat();
                 break;
               }
-              case 73: {
+              case 89: {
                 TestFloat64 = input.ReadDouble();
                 break;
               }
-              case 81: {
+              case 97: {
                 TestDouble = input.ReadDouble();
                 break;
               }
-              case 90:
-              case 88: {
+              case 106:
+              case 104: {
                 testArys_.AddEntriesFrom(input, _repeated_testArys_codec);
+                break;
+              }
+              case 130:
+              case 129: {
+                testAry2S_.AddEntriesFrom(input, _repeated_testAry2S_codec);
                 break;
               }
             }

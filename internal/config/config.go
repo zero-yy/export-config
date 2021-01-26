@@ -1,7 +1,6 @@
 package config
 
 import (
-	"fmt"
 	"github.com/BurntSushi/toml"
 	"os"
 )
@@ -27,7 +26,7 @@ func MustInit(fn string) {
 	if err != nil {
 		panic(err)
 	}
-	fmt.Println(C)
+	//fmt.Println(C)
 
 	_ = os.MkdirAll(C.OutputProtoPath, os.ModePerm)
 	_ = os.MkdirAll(C.OutputDataCSharpPath, os.ModePerm)

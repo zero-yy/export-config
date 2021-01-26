@@ -160,74 +160,83 @@ func panicIfErr(err error, sheetName string, cellName string) {
 	}
 }
 
+func getCellValue(protoType string, cell *xlsx.Cell) (v reflect.Value, err error) {
+	tFunc, ok := typeReflect[protoType]
+	if !ok {
+		err = fmt.Errorf("not found typeReflect for %s", protoType)
+		return
+	}
+
+	t := tFunc()
+	v = reflect.New(t).Elem()
+	//fmt.Print(t, v)
+
+	switch protoType {
+	case "int32", "int", "int64", "long":
+		iValue, _err := cell.Int()
+		err = _err
+		if err != nil {
+			break
+		}
+		v.SetInt(int64(iValue))
+
+	case "uint32", "uint", "uint64", "ulong":
+		_iValue, _err := cell.Int()
+		err = _err
+		if err != nil {
+			break
+		}
+		iValue := uint64(_iValue)
+		v.SetUint(uint64(iValue))
+
+	case "string":
+		s := cell.String()
+		v.SetString(s)
+
+	case "float", "float32", "float64", "double":
+		iValue, _err := cell.Float()
+		err = _err
+		if err != nil {
+			break
+		}
+		v.SetFloat(iValue)
+
+	default:
+		err = fmt.Errorf("unsupport %s", protoType)
+	}
+
+	return
+}
+
 // unmarshal row data to record
 func (s *Sheet) ParseRecordData(rowIndex int, rowData *xlsx.Row, record interface{}) {
 	t := reflect.TypeOf(record)
+	_ = t
+
 	v := reflect.ValueOf(record).Elem()
 
-	fmt.Println("ParseRecordData", t, v)
+	//fmt.Println("ParseRecordData", t, v)
 
 	for colIndex := KColStart; colIndex < len(rowData.Cells); colIndex++ {
 		c := s.ColMap[colIndex]
-		fmt.Println(colIndex, c)
+		//fmt.Println(colIndex, c)
 
 		cell := rowData.Cells[colIndex]
 
-		var _i int64
-		var _u uint64
-		var _s string
-		var _f float64
-		//var _v reflect.Value
-
-		switch c.ProtoType {
-		case "int32", "int", "int64", "long":
-			iValue, err := cell.Int()
-			panicIfErr(err, s.Name, CellName(int32(rowIndex), int32(colIndex)))
-			_i = int64(iValue)
-			//_v = reflect.ValueOf(_i)
-
-		case "uint32", "uint", "uint64", "ulong":
-			_iValue, err := cell.Int()
-			iValue := uint64(_iValue)
-			panicIfErr(err, s.Name, CellName(int32(rowIndex), int32(colIndex)))
-			_u = iValue
-			//_v = reflect.ValueOf(_u)
-
-		case "string":
-			_s = cell.String()
-			//_v = reflect.ValueOf(_s)
-
-		case "float", "float32", "float64", "double":
-			iValue, err := cell.Float()
-			panicIfErr(err, s.Name, CellName(int32(rowIndex), int32(colIndex)))
-			_f = iValue
-			//_v = reflect.ValueOf(_f)
-		}
+		cellValue, err := getCellValue(c.ProtoType, cell)
+		panicIfErr(err, s.Name, CellName(int32(rowIndex), int32(colIndex)))
 
 		fv := v.FieldByName(c.CamelPureName)
 
 		if c.Decorate != kDecorateAry {
-			switch fv.Kind() {
-			case reflect.Int, reflect.Int8, reflect.Int16, reflect.Int32, reflect.Int64:
-				fv.SetInt(_i)
-			case reflect.Uint, reflect.Uint8, reflect.Uint16, reflect.Uint32, reflect.Uint64:
-				fv.SetUint(_u)
-			case reflect.String:
-				fv.SetString(_s)
-			case reflect.Float32, reflect.Float64:
-				fv.SetFloat(_f)
-
-			default:
-				panicIfErr(fmt.Errorf("unknown kind "), s.Name, CellName(int32(rowIndex), int32(colIndex)))
-			}
+			fv.Set(cellValue)
 		} else {
 			switch fv.Kind() {
 			case reflect.Slice:
-				//TODO
-				fmt.Println("todo slice")
-				//fv.Set(reflect.Append(fv, _v))
+				fv.Set(reflect.Append(fv, cellValue))
 			default:
-				panicIfErr(fmt.Errorf("unknown kind "), s.Name, CellName(int32(rowIndex), int32(colIndex)))
+				fmt.Println(fv)
+				panicIfErr(fmt.Errorf("unknown kind:%v, cellInfo:%+v, pls check toCamelName, maybe un compare", fv.Kind(), c), s.Name, CellName(int32(rowIndex), int32(colIndex)))
 			}
 		}
 	}

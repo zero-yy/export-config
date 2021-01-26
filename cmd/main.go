@@ -13,7 +13,7 @@ var (
 
 func main() {
 	flag.Parse()
-	fmt.Printf("start run export-config --config=%s", *configFileName)
+	fmt.Printf("start run export-config --config=%s\n", *configFileName)
 
 	config.MustInit(*configFileName)
 

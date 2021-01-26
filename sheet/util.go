@@ -5,7 +5,7 @@ import (
 	"strings"
 )
 
-var link = regexp.MustCompile("(^[A-Za-z])|_([A-Za-z])")
+var link = regexp.MustCompile("(^[A-Za-z])|[_\\d]([A-Za-z])")
 
 func toCamelCase(str string) string {
 	return link.ReplaceAllStringFunc(str, func(s string) string {

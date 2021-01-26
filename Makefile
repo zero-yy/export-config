@@ -6,7 +6,8 @@ fmt:
 run: fmt
 	go run main.go
 
-test: run
+test:
+	go run main.go && \
 	go run test/go/gen/conf/cmd/gendata/main.go --config=./default.toml
 
 bin: fmt

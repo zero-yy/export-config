@@ -40,6 +40,13 @@ func initLoadFunc() {
 	}
 {{end}}
 }
+
+{{- range .Sheets}}
+func Get{{.CamelName}}(id {{.IdColType}}) (*{{.CamelName}}_Record) {
+	if d, ok := {{.CamelName}}Data.Records[id]; ok {return d} 
+	return nil	
+}	
+{{- end}}
 `
 )
 

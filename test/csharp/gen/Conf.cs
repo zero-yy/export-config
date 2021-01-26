@@ -24,33 +24,33 @@ namespace conf {
     static ConfReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "Cgpjb25mLnByb3RvEgRDb25mIqUDCgR0ZXN0EigKB3JlY29yZHMYASADKAsy",
-            "Fy5Db25mLnRlc3QuUmVjb3Jkc0VudHJ5Eg0KBWNyYzMyGAIgASgNGqACCgZS",
+            "Cgpjb25mLnByb3RvEgRDb25mIr4DCgR0ZXN0EigKB3JlY29yZHMYASADKAsy",
+            "Fy5Db25mLnRlc3QuUmVjb3Jkc0VudHJ5Eg0KBWNyYzMyGAIgASgNGrkCCgZS",
             "ZWNvcmQSCgoCaWQYASABKAUSEwoLdGVzdF9zdHJpbmcYAiABKAkSFAoMdGVz",
             "dF9kZWZhdWx0GAMgASgJEhIKCnRlc3RfaW50MzIYBCABKAUSEwoLdGVzdF91",
             "aW50MzIYBSABKA0SEQoJdGVzdF91aW50GAYgASgNEhIKCnRlc3RfaW50NjQY",
             "ByABKAMSEwoLdGVzdF91aW50NjQYCCABKAQSEgoKdGVzdF9mbG9hdBgJIAEo",
             "AhIUCgx0ZXN0X2Zsb2F0MzIYCiABKAISFAoMdGVzdF9mbG9hdDY0GAsgASgB",
-            "EhMKC3Rlc3RfZG91YmxlGAwgASgBEhEKCXRlc3RfYXJ5cxgNIAMoBRISCgp0",
-            "ZXN0X2FyeTJzGBAgAygBGkEKDFJlY29yZHNFbnRyeRILCgNrZXkYASABKAUS",
-            "IAoFdmFsdWUYAiABKAsyES5Db25mLnRlc3QuUmVjb3JkOgI4ASKuAQoFdGVz",
-            "dDISKQoHcmVjb3JkcxgBIAMoCzIYLkNvbmYudGVzdDIuUmVjb3Jkc0VudHJ5",
-            "Eg0KBWNyYzMyGAIgASgNGicKBlJlY29yZBIKCgJpZBgBIAEoCRIRCgl0ZXN0",
-            "X2FyeXMYAiADKAUaQgoMUmVjb3Jkc0VudHJ5EgsKA2tleRgBIAEoCRIhCgV2",
-            "YWx1ZRgCIAEoCzISLkNvbmYudGVzdDIuUmVjb3JkOgI4ASLtAgoFdGVzdDMS",
-            "KQoHcmVjb3JkcxgBIAMoCzIYLkNvbmYudGVzdDMuUmVjb3Jkc0VudHJ5Eg0K",
-            "BWNyYzMyGAIgASgNGuUBCgZSZWNvcmQSCgoCaWQYASABKAUSEwoLdGVzdF9z",
-            "dHJpbmcYAiABKAkSFAoMdGVzdF9kZWZhdWx0GAMgASgJEhIKCnRlc3RfaW50",
-            "MzIYBCABKAUSEwoLdGVzdF91aW50MzIYBSABKA0SEgoKdGVzdF9pbnQ2NBgG",
-            "IAEoAxITCgt0ZXN0X3VpbnQ2NBgHIAEoBBIUCgx0ZXN0X2Zsb2F0MzIYCCAB",
-            "KAISFAoMdGVzdF9mbG9hdDY0GAkgASgBEhMKC3Rlc3RfZG91YmxlGAogASgB",
-            "EhEKCXRlc3RfYXJ5cxgLIAMoBRpCCgxSZWNvcmRzRW50cnkSCwoDa2V5GAEg",
-            "ASgFEiEKBXZhbHVlGAIgASgLMhIuQ29uZi50ZXN0My5SZWNvcmQ6AjgBQg1a",
-            "BGNvbmaqAgRjb25mYgZwcm90bzM="));
+            "EhMKC3Rlc3RfZG91YmxlGAwgASgBEhEKCXRlc3RfYXJ5cxgNIAMoBRIVCg10",
+            "ZG91YmxlX2FyeTJzGBAgAygBEhQKDHRzdHJpbmdfYXJ5cxgTIAMoCRpBCgxS",
+            "ZWNvcmRzRW50cnkSCwoDa2V5GAEgASgFEiAKBXZhbHVlGAIgASgLMhEuQ29u",
+            "Zi50ZXN0LlJlY29yZDoCOAEirgEKBXRlc3QyEikKB3JlY29yZHMYASADKAsy",
+            "GC5Db25mLnRlc3QyLlJlY29yZHNFbnRyeRINCgVjcmMzMhgCIAEoDRonCgZS",
+            "ZWNvcmQSCgoCaWQYASABKAkSEQoJdGVzdF9hcnlzGAIgAygFGkIKDFJlY29y",
+            "ZHNFbnRyeRILCgNrZXkYASABKAkSIQoFdmFsdWUYAiABKAsyEi5Db25mLnRl",
+            "c3QyLlJlY29yZDoCOAEi7QIKBXRlc3QzEikKB3JlY29yZHMYASADKAsyGC5D",
+            "b25mLnRlc3QzLlJlY29yZHNFbnRyeRINCgVjcmMzMhgCIAEoDRrlAQoGUmVj",
+            "b3JkEgoKAmlkGAEgASgFEhMKC3Rlc3Rfc3RyaW5nGAIgASgJEhQKDHRlc3Rf",
+            "ZGVmYXVsdBgDIAEoCRISCgp0ZXN0X2ludDMyGAQgASgFEhMKC3Rlc3RfdWlu",
+            "dDMyGAUgASgNEhIKCnRlc3RfaW50NjQYBiABKAMSEwoLdGVzdF91aW50NjQY",
+            "ByABKAQSFAoMdGVzdF9mbG9hdDMyGAggASgCEhQKDHRlc3RfZmxvYXQ2NBgJ",
+            "IAEoARITCgt0ZXN0X2RvdWJsZRgKIAEoARIRCgl0ZXN0X2FyeXMYCyADKAUa",
+            "QgoMUmVjb3Jkc0VudHJ5EgsKA2tleRgBIAEoBRIhCgV2YWx1ZRgCIAEoCzIS",
+            "LkNvbmYudGVzdDMuUmVjb3JkOgI4AUINWgRjb25mqgIEY29uZmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::conf.test), global::conf.test.Parser, new[]{ "Records", "Crc32" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::conf.test.Types.Record), global::conf.test.Types.Record.Parser, new[]{ "Id", "TestString", "TestDefault", "TestInt32", "TestUint32", "TestUint", "TestInt64", "TestUint64", "TestFloat", "TestFloat32", "TestFloat64", "TestDouble", "TestArys", "TestAry2S" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::conf.test), global::conf.test.Parser, new[]{ "Records", "Crc32" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::conf.test.Types.Record), global::conf.test.Types.Record.Parser, new[]{ "Id", "TestString", "TestDefault", "TestInt32", "TestUint32", "TestUint", "TestInt64", "TestUint64", "TestFloat", "TestFloat32", "TestFloat64", "TestDouble", "TestArys", "TdoubleAry2S", "TstringArys" }, null, null, null, null),
             null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::conf.test2), global::conf.test2.Parser, new[]{ "Records", "Crc32" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::conf.test2.Types.Record), global::conf.test2.Types.Record.Parser, new[]{ "Id", "TestArys" }, null, null, null, null),
             null, }),
@@ -251,7 +251,8 @@ namespace conf {
           testFloat64_ = other.testFloat64_;
           testDouble_ = other.testDouble_;
           testArys_ = other.testArys_.Clone();
-          testAry2S_ = other.testAry2S_.Clone();
+          tdoubleAry2S_ = other.tdoubleAry2S_.Clone();
+          tstringArys_ = other.tstringArys_.Clone();
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
         }
 
@@ -408,17 +409,30 @@ namespace conf {
           get { return testArys_; }
         }
 
-        /// <summary>Field number for the "test_ary2s" field.</summary>
-        public const int TestAry2SFieldNumber = 16;
-        private static readonly pb::FieldCodec<double> _repeated_testAry2S_codec
+        /// <summary>Field number for the "tdouble_ary2s" field.</summary>
+        public const int TdoubleAry2SFieldNumber = 16;
+        private static readonly pb::FieldCodec<double> _repeated_tdoubleAry2S_codec
             = pb::FieldCodec.ForDouble(130);
-        private readonly pbc::RepeatedField<double> testAry2S_ = new pbc::RepeatedField<double>();
+        private readonly pbc::RepeatedField<double> tdoubleAry2S_ = new pbc::RepeatedField<double>();
         /// <summary>
         /// decorate:ary
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        public pbc::RepeatedField<double> TestAry2S {
-          get { return testAry2S_; }
+        public pbc::RepeatedField<double> TdoubleAry2S {
+          get { return tdoubleAry2S_; }
+        }
+
+        /// <summary>Field number for the "tstring_arys" field.</summary>
+        public const int TstringArysFieldNumber = 19;
+        private static readonly pb::FieldCodec<string> _repeated_tstringArys_codec
+            = pb::FieldCodec.ForString(154);
+        private readonly pbc::RepeatedField<string> tstringArys_ = new pbc::RepeatedField<string>();
+        /// <summary>
+        /// decorate:ary
+        /// </summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        public pbc::RepeatedField<string> TstringArys {
+          get { return tstringArys_; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -447,7 +461,8 @@ namespace conf {
           if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(TestFloat64, other.TestFloat64)) return false;
           if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(TestDouble, other.TestDouble)) return false;
           if(!testArys_.Equals(other.testArys_)) return false;
-          if(!testAry2S_.Equals(other.testAry2S_)) return false;
+          if(!tdoubleAry2S_.Equals(other.tdoubleAry2S_)) return false;
+          if(!tstringArys_.Equals(other.tstringArys_)) return false;
           return Equals(_unknownFields, other._unknownFields);
         }
 
@@ -467,7 +482,8 @@ namespace conf {
           if (TestFloat64 != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(TestFloat64);
           if (TestDouble != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(TestDouble);
           hash ^= testArys_.GetHashCode();
-          hash ^= testAry2S_.GetHashCode();
+          hash ^= tdoubleAry2S_.GetHashCode();
+          hash ^= tstringArys_.GetHashCode();
           if (_unknownFields != null) {
             hash ^= _unknownFields.GetHashCode();
           }
@@ -530,7 +546,8 @@ namespace conf {
             output.WriteDouble(TestDouble);
           }
           testArys_.WriteTo(output, _repeated_testArys_codec);
-          testAry2S_.WriteTo(output, _repeated_testAry2S_codec);
+          tdoubleAry2S_.WriteTo(output, _repeated_tdoubleAry2S_codec);
+          tstringArys_.WriteTo(output, _repeated_tstringArys_codec);
           if (_unknownFields != null) {
             _unknownFields.WriteTo(output);
           }
@@ -576,7 +593,8 @@ namespace conf {
             size += 1 + 8;
           }
           size += testArys_.CalculateSize(_repeated_testArys_codec);
-          size += testAry2S_.CalculateSize(_repeated_testAry2S_codec);
+          size += tdoubleAry2S_.CalculateSize(_repeated_tdoubleAry2S_codec);
+          size += tstringArys_.CalculateSize(_repeated_tstringArys_codec);
           if (_unknownFields != null) {
             size += _unknownFields.CalculateSize();
           }
@@ -625,7 +643,8 @@ namespace conf {
             TestDouble = other.TestDouble;
           }
           testArys_.Add(other.testArys_);
-          testAry2S_.Add(other.testAry2S_);
+          tdoubleAry2S_.Add(other.tdoubleAry2S_);
+          tstringArys_.Add(other.tstringArys_);
           _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
         }
 
@@ -692,7 +711,11 @@ namespace conf {
               }
               case 130:
               case 129: {
-                testAry2S_.AddEntriesFrom(input, _repeated_testAry2S_codec);
+                tdoubleAry2S_.AddEntriesFrom(input, _repeated_tdoubleAry2S_codec);
+                break;
+              }
+              case 154: {
+                tstringArys_.AddEntriesFrom(input, _repeated_tstringArys_codec);
                 break;
               }
             }

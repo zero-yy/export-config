@@ -22,7 +22,8 @@ message test
 		double test_float64 = 11; 
 		double test_double = 12; 
 		repeated int32 test_arys = 13; // decorate:ary
-		repeated double test_ary2s = 16; // decorate:ary
+		repeated double tdouble_ary2s = 16; // decorate:ary
+		repeated string tstring_arys = 19; // decorate:ary
 	}
 
 	map<int32, Record> records = 1;

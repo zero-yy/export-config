@@ -72,7 +72,7 @@ namespace Config
 			}
 			return obj.Records[id];
 		}
-		public static {{.Name}}.Types.Record GetTestById(int id)
+		public static {{.Name}}.Types.Record Get{{.CamelName}}ById(int id)
 		{
 			return GetTable<{{.Name}}>().GetById(id);
 		}

@@ -97,7 +97,7 @@ namespace Config
         public static List<string> TableNames = new List<string>();
 
         // 一次性函数
-        static CfgMgr()
+        static ConfLoader()
         {
             var path = GetDataPath(); 
             if (!Directory.Exists(path))

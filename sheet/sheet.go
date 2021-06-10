@@ -30,8 +30,10 @@ type Sheet struct {
 	ColAry []*Col
 	ColMap map[int]*Col
 
-	IdColType  string
-	IdColIndex int
+	// default, (go and so on...)
+	DefaultIdColType string
+	CSharpIdColType  string
+	IdColIndex       int
 
 	CamelName string
 	Name      string
@@ -73,31 +75,39 @@ func NewSheet(xs *xlsx.Sheet) (s *Sheet) {
 		colName := xs.Rows[kNameRowIndex].Cells[i].Value
 		originalColType := xs.Rows[kTypeRowIndex].Cells[i].Value
 
-		colType, ok := typeParse[originalColType]
+		defaultColType, ok := typeParse[originalColType]
 		if !ok {
 			panic(fmt.Errorf("sheet(%s) typeParse error: unknown type(%s) cell(%s)", xs.Name, originalColType, CellName(kTypeRowIndex, int32(i))))
 		}
 
+		csharpColType := defaultColType
+		if _, ok2 := typeConverToCSharpt[defaultColType]; ok2 {
+			csharpColType = typeConverToCSharpt[defaultColType]
+		}
+
 		pureColName, decorate := getPureName(colName)
+		setSheetInfo := false
 		if decorate == kDecorateId {
-			s.Id = pureColName
-			s.CamelId = toCamelCase(s.Id)
-			s.IdColType = colType
-			s.IdColIndex = i
+			setSheetInfo = true
 		} else if pureColName == kDecorateId {
 			if s.Id != pureColName {
 				panic(fmt.Errorf("sheet(%s) repeat id %s vs %s", xs.Name, s.Id, pureColName))
 			}
+			setSheetInfo = true
+		}
+
+		if setSheetInfo {
 			s.Id = pureColName
 			s.CamelId = toCamelCase(s.Id)
-			s.IdColType = colType
+			s.DefaultIdColType = defaultColType
+			s.CSharpIdColType = csharpColType
 			s.IdColIndex = i
 		}
 
 		c := &Col{
 			Name:          colName,
 			CamelName:     toCamelCase(colName),
-			ProtoType:     colType,
+			ProtoType:     defaultColType,
 			PureName:      pureColName,
 			CamelPureName: toCamelCase(pureColName),
 			Decorate:      decorate,
@@ -141,7 +151,7 @@ func (s *Sheet) getProtoCode() string {
 	// kill last \n
 	body = strings.TrimRight(body, "\n")
 
-	protoStr := fmt.Sprintf(kMessageFmt, s.Xs.Name, body, s.IdColType)
+	protoStr := fmt.Sprintf(kMessageFmt, s.Xs.Name, body, s.DefaultIdColType)
 	return protoStr
 }
 

@@ -14,7 +14,7 @@ func initSaveFunc() {
 {{- range .Sheets}}
 	DataSaveFunc["{{.Name}}"] = func(s *sheet.Sheet, outputPath string) {
 		m := &{{.CamelName}}{
-			Records: make(map[{{.IdColType}}]*{{.CamelName}}_Record),
+			Records: make(map[{{.DefaultIdColType}}]*{{.CamelName}}_Record),
 			Crc32:   0,
 		}
 

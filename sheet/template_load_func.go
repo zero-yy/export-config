@@ -42,7 +42,7 @@ func initLoadFunc() {
 }
 
 {{- range .Sheets}}
-func Get{{.CamelName}}(id {{.IdColType}}) (*{{.CamelName}}_Record) {
+func Get{{.CamelName}}(id {{.DefaultIdColType}}) (*{{.CamelName}}_Record) {
 	if d, ok := {{.CamelName}}Data.Records[id]; ok {return d} 
 	return nil	
 }	
@@ -64,7 +64,7 @@ namespace Config
 		}
 		
 {{- range .Sheets}}
-		public static {{.Name}}.Types.Record GetById(this {{.Name}} obj, int id)
+		public static {{.Name}}.Types.Record GetById(this {{.Name}} obj, {{.CSharpIdColType}} id)
 		{
 			if (!obj.Records.ContainsKey(id))
 			{
@@ -72,7 +72,7 @@ namespace Config
 			}
 			return obj.Records[id];
 		}
-		public static {{.Name}}.Types.Record Get{{.CamelName}}ById(int id)
+		public static {{.Name}}.Types.Record Get{{.CamelName}}ById({{.CSharpIdColType}} id)
 		{
 			return GetTable<{{.Name}}>().GetById(id);
 		}

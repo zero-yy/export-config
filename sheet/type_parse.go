@@ -44,6 +44,14 @@ var (
 		"list<float64>": "repeated double",
 	}
 
+	typeConverToCSharpt = map[string]string{
+		"int32":  "int",
+		"uint32": "uint",
+
+		"int64":  "long",
+		"uint64": "long",
+	}
+
 	typeReflect = map[string]func() reflect.Type{
 		"int32": func() reflect.Type { return reflect.TypeOf(int32(0)) },
 		"int":   func() reflect.Type { return reflect.TypeOf(int32(0)) },

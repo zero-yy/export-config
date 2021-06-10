@@ -76,7 +76,7 @@ using Google.Protobuf;
 
 namespace Config
 {
-    public static partial class CfgMgr
+    public static partial class ConfLoader
     {
         // 数据表名
         static Dictionary<string, object> tables = new Dictionary<string, object>();

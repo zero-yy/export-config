@@ -76,8 +76,8 @@ namespace Config
 		{
 			return GetTable<{{.Name}}>().GetById(id);
 		}
-	}
 {{- end}}
+	}
 }
 `
 )

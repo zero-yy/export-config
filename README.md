@@ -21,7 +21,7 @@ ProtoPackage        = "Conf"
 CSharpNamespace     = "conf"
 GoPackage           = "conf"
 GoPackageFullPath   = "github.com/zero-yy/export-config/test/go/gen/conf"
-``` 
+```
 * gen code   
 `export-config --config=config.toml`
 
@@ -64,8 +64,9 @@ GoPackageFullPath   = "github.com/zero-yy/export-config/test/go/gen/conf"
 
 #### data
 * If id column have no data, then skip the row.  
-  
-  
+## TODO
+* 针对c#支持字符串为主键的表
+
 ## ConfLoader.cs
 ```c#
 using UnityEngine;

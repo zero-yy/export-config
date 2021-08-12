@@ -92,6 +92,7 @@ func save(inputPath, outputPath string) {
 	}
 }
 
+// json 文件名做特殊处理，在Unity里，同目录下同文件名可能会产生诡异问题
 func saveJson(m proto.Message, fullName string) {
 	b, err := json.MarshalIndent(m, "", "  ")
 	panicIfErr(err)

@@ -45,7 +45,8 @@ func initSaveFunc() {
 		fullName := path.Join(outputPath, "{{.Name}}.bytes")
 		saveBytes(m, fullName)
 
-		fullName = path.Join(outputPath, "{{.Name}}.json")
+		// json 文件名做特殊处理，在Unity里，同目录下同文件名可能会产生诡异问题
+		fullName = path.Join(outputPath, "{{.Name}}_json.json")
 		saveJson(m, fullName)
 	}
 {{end}}

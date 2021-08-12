@@ -18,6 +18,8 @@ type Config struct {
 	CSharpNamespace   string
 	GoPackage         string
 	GoPackageFullPath string
+
+	ProtoCPath string
 }
 
 var C Config

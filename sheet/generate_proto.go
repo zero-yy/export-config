@@ -32,7 +32,12 @@ func shellOut(command string) (error, string, string) {
 }
 
 func callProtoC() {
-	cmdParam := fmt.Sprintf("protoc -I %s --go_out=%s --csharp_out=%s %s",
+	protocPath := config.C.ProtoCPath
+	if len(protocPath) == 0 {
+		protocPath = "protoc"
+	}
+	cmdParam := fmt.Sprintf("%s -I %s --go_out=%s --csharp_out=%s %s",
+		protocPath,
 		config.C.OutputProtoPath,
 		config.C.OutputCodeGoPath,
 		config.C.OutputCodeCSharpPath,

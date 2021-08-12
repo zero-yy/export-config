@@ -43,6 +43,8 @@ func callProtoC() {
 		config.C.OutputCodeCSharpPath,
 		ProtoFileName)
 
+	fmt.Println(cmdParam)
+
 	err, s1, s2 := shellOut(cmdParam)
 
 	if err != nil {
